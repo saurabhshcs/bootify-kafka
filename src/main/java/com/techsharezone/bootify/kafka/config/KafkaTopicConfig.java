@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KafkaTopicConfig {
 
-//    @Value(value = "{$kafka.bootsrapAddress}")
-//    private String bootStrapAddress;
-//
-//    public KafkaAdmin kafkaAdmin() {
-//        Map<String, Object> configs = new HashMap<>();
-//        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapAddress);
-//        return new KafkaAdmin(configs);
-//    }
-//
-//    @Bean
-//    public NewTopic topic1() {
-//        return new NewTopic("techsharezone", 1, (short) 1);
-//    }
+    @Value(value = "{$kafka.bootsrapAddress}")
+    private String bootStrapAddress;
+
+    public KafkaAdmin kafkaAdmin() {
+        Map<String, Object> configs = new HashMap<>();
+        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapAddress);
+        return new KafkaAdmin(configs);
+    }
+
+    @Bean
+    public NewTopic topic1() {
+        return new NewTopic("techsharezone", 1, (short) 1);
+    }
 }
