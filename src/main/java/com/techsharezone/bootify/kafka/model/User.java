@@ -27,9 +27,6 @@ public class User {
     private long userId;
 
     @NotNull
-    private String firstName;
-
-    @NotNull
-    private String lastName;
+    private String name;
 
 }

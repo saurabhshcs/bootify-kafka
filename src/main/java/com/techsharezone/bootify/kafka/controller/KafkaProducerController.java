@@ -6,26 +6,25 @@ package com.techsharezone.bootify.kafka.controller;
  * @author  saurabhshcs
  */
 
-import com.techsharezone.bootify.kafka.service.KafKaProducerService;
+import com.techsharezone.bootify.kafka.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController(value = "/kafka")
 public class KafkaProducerController {
 
     @Autowired
-    private final KafKaProducerService service;
+    private KafkaTemplate<String, User>  kafkaTemplate;
 
-    @Autowired
-    public KafkaProducerController(final KafKaProducerService service) {
-        this.service = service;
-    }
+    private static final String TOPIC = "Kafka_Example";
 
-    @PostMapping(value = "publish")
-    public void sendMessage(@RequestParam("message") String message) {
+    @GetMapping("/publish/{name}")
+    public String post(@PathVariable("name") final String name) {
 
-        this.service.sendMessage(message);
+        kafkaTemplate.send(TOPIC, User.builder().name("sam").build());
+        return "Published successfully";
     }
 }
