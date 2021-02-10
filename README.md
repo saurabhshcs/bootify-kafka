@@ -2,6 +2,11 @@
 
 ## Apache Kafka Learning
 
+## What is Apache Kafka
+
+Apache Kafka is an open-source stream-processing software platform developed by the Apache Software Foundation, written in Scala and Java.
+
+
 ## Installation on MacOS
 
 `
