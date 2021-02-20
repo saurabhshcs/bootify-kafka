@@ -14,10 +14,7 @@ This repository has the complete code related to kafka producers/consumers using
 
 - [Kafka SSL SetUp](https://github.com/saurabhshcs/apache-kafka-developer-guide/blob/main/Kafka_Security_config.md)
 
-## H2 Database
-
-- Access the h2 database in the following link - http://localhost:8081/h2-console
-
+## MySQL Database
 
 ## Run all the test 
 
