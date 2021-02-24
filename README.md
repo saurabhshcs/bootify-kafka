@@ -1,4 +1,5 @@
 # bootify-kafka
+This is simple application that contains the Apache Kafka Producer and Consumer API example.
 
 ## Apache Kafka Learning
 
